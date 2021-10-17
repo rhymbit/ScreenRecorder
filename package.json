@@ -2,7 +2,7 @@
   "name": "screenrecorder",
   "productName": "screenrecorder",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Screen recorder application made by Prateek Parashar",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -14,7 +14,7 @@
   "keywords": [],
   "author": {
     "name": "prateek332",
-    "email": "prateekn332@gmail.com"
+    "url": "https://prateekinfo.in"
   },
   "license": "MIT",
   "config": {
