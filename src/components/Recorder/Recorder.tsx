@@ -7,7 +7,7 @@ const { writeFile } = require('fs');
 
 const { dialog, Menu } = remote;
 
-let mediaRecorder: MediaRecorder;
+let mediaRecorder: any;
 const recordedChunks: any[] = [];
 
 // get all the recording display elements after they've been loaded in the DOM
@@ -64,6 +64,7 @@ async function getVideoSources() {
     types: ['window', 'screen', 'audio']
   });
 
+  console.log(inputSources);
 
   const videoOptionsMenu = Menu.buildFromTemplate(
     inputSources.map(source => {

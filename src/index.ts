@@ -19,12 +19,13 @@ const createWindow = (): void => {
       nodeIntegration: true,
       contextIsolation: false,
     },
+
+    icon: 'src/favicon.png'
+
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
-  mainWindow.setIcon(`src/favicon.png`);
 
   mainWindow.removeMenu();
 
@@ -38,6 +39,14 @@ const createWindow = (): void => {
 app.whenReady()
   .then(() => {
     createWindow();
+    const template = [
+      {
+
+      }
+    ]
+
+    const menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
     })
 
 // Quit when all windows are closed, except on macOS. There, it's common
