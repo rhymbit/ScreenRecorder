@@ -1,0 +1,17 @@
+.footer  {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.footerimg .footertext {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.footerimg:hover .footertext {
+  opacity: 1;
+  top: 100%;
+  position: absolute;
+  z-index: 1;
+}
