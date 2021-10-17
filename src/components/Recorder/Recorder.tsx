@@ -61,7 +61,7 @@ const Recorder: FC = () => {
 async function getVideoSources() {
   
   const inputSources = await desktopCapturer.getSources({
-    types: ['window', 'screen']
+    types: ['window', 'screen', 'audio']
   });
 
 
