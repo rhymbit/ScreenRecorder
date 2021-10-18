@@ -1,15 +1,31 @@
 {
   "name": "screenrecorder",
-  "productName": "screenrecorder",
+  "productName": "ScreenRecorder",
   "version": "1.0.0",
   "description": "Screen recorder application made by Prateek Parashar",
   "main": ".webpack/main",
+  "mac": {
+    "icon": "./public/favicon.icns"
+  },
+  "win" : {
+    "icon": "./public/favicon.png"
+  },
+  "linux": {
+    "icon": "./public/favicon.png"
+  },
+  "files": [
+    "./public/**/*"
+  ],
+  "directories": {
+    "buildResources": "public"
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
+    "lint": "eslint --ext .ts,.tsx .",
+    "make-mac": "electron-forge make --platform darwin"
   },
   "keywords": [],
   "author": {
@@ -19,7 +35,10 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "platform": "all",
+        "icon" : "./public/favicon"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -40,6 +59,12 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "format": "ULFO"
+          }
         }
       ],
       "plugins": [

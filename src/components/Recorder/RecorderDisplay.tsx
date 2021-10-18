@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 const RecorderDisplay: FC = () => {
 
-  const commonCss = `m-2 p-2 rounded-2xl h-12 transition duration-500 ease-in-out transform hover:scale-110`
+  const commonCss = `m-2 p-2 font-bold rounded-2xl h-12 transition duration-500 ease-in-out transform hover:scale-110`
   
   return (
     <div>
@@ -23,7 +23,7 @@ const RecorderDisplay: FC = () => {
 
         <button
           id={`videoSelectBtn`}
-          className={`bg-blue-500 ${commonCss} hover:bg-blue-400`}
+          className={`bg-blue-500 max-w-xs overflow-hidden ${commonCss} hover:bg-blue-400`}
         >
           Select Video Source</button>
 

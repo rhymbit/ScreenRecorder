@@ -27,22 +27,30 @@ const Recorder: FC = () => {
 
       startBtn = document.getElementById(`startBtn`);
       startBtn.onclick = e => {
-        mediaRecorder.start();
-        startBtn.classList.remove("bg-green-600");
-        startBtn.classList.remove("hover:bg-green-500");
-        startBtn.classList.add("bg-red-500");
-        startBtn.classList.add("animate-pulse");
-        startBtn.innerText = 'Recording';
+        try {
+          mediaRecorder.start();
+          startBtn.classList.remove("bg-green-600");
+          startBtn.classList.remove("hover:bg-green-500");
+          startBtn.classList.add("bg-red-500");
+          startBtn.classList.add("animate-pulse");
+          startBtn.innerText = 'Recording';
+        } catch (err) {
+          dialog.showErrorBox("Select a Video Source", "Bakayaro");
+        }
       }
 
       stopBtn = document.getElementById(`stopBtn`);
       stopBtn.onclick = e => {
-        mediaRecorder.stop();
-        startBtn.classList.remove("bg-red-500");
-        startBtn.classList.remove("animate-pulse");
-        startBtn.classList.add("bg-green-600");
-        startBtn.classList.add("hover:bg-green-500");
-        startBtn.innerText = 'Start';
+        try {
+          mediaRecorder.stop();
+          startBtn.classList.remove("bg-red-500");
+          startBtn.classList.remove("animate-pulse");
+          startBtn.classList.add("bg-green-600");
+          startBtn.classList.add("hover:bg-green-500");
+          startBtn.innerText = 'Start';
+        } catch (err) {
+          dialog.showErrorBox("What are you trying to stop here?", "Bakayaro-Konoyaro");
+        }
       }
 
       videoSelectBtn = document.getElementById(`videoSelectBtn`);

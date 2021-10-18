@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { shell } from 'electron';
 import config from '../../../app.config'
 
-import instagramIcon from '../../images/instagram.svg';
+import instagramIcon from '../../images/instagram.ico';
 import discordIcon from '../../images/discord.svg';
 import githubIcon from '../../images/github.svg';
 import aboutIcon from '../../images/about.svg';
@@ -19,6 +19,7 @@ const Footer: FC = () => {
         <img
           src={aboutIcon}
           onClick={e => shell.openExternal(config.aboutMe.portfolio)}
+          className="transform duration-500 hover:rotate-180"
         />
         <p className="footertext">About Me</p>
       </a>
@@ -27,6 +28,7 @@ const Footer: FC = () => {
         <img
           src={githubIcon}
           onClick={e => shell.openExternal(config.aboutMe.github)}
+          className="transform duration-500 hover:rotate-180"
         />
         <p className="footertext">My Github</p>
       </a>
@@ -35,6 +37,7 @@ const Footer: FC = () => {
         <img
           src={discordIcon}
           onClick={e => shell.openExternal(config.aboutMe.discord)}
+          className="transform duration-500 hover:rotate-180"
         />
         <p className="footertext">My Discord</p>
       </a>
@@ -43,6 +46,7 @@ const Footer: FC = () => {
         <img
           src={instagramIcon}
           onClick={e => shell.openExternal(config.aboutMe.instagram)}
+          className="transform duration-500 hover:rotate-180"
         />
         <p className="footertext">My Insta</p>
       </a>

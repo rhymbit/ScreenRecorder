@@ -13,3 +13,24 @@
   position: absolute;
   z-index: 1;
 }
+
+/* Logo Animation */
+
+@keyframes color-rotate {
+  from {
+      filter: hue-rotate(0deg);
+  }
+  to {
+      filter: hue-rotate(360deg);
+  }
+}
+
+.logo {
+  margin-bottom: 5rem;
+}
+
+.logo:hover {
+  animation: color-rotate 2s;
+  animation-iteration-count: infinite; 
+  animation-direction: alternate;
+}

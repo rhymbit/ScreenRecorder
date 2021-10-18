@@ -12,25 +12,27 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    title: "Screen Recording App",
+    title: "Screen Recorder",
     height: 720,
     width: 1280,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      enableRemoteModule: true,
     },
 
-    icon: 'src/favicon.png'
+    icon: "./public/favicon.png"
 
   });
+
+  mainWindow.removeMenu();
+  mainWindow.setMenu(null);
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
-  mainWindow.removeMenu();
-
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
