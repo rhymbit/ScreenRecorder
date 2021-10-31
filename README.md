@@ -1,4 +1,4 @@
-<h1 align="center"><img height="40" height="40" src="public/favicon.ico" /> ScreenRecorder</h1>
+# Screen Recorder <img src="public/favicon.ico" width="65" align="center" />
 
 <p align="center">
   <img width="460" height="300" src="app.png">
